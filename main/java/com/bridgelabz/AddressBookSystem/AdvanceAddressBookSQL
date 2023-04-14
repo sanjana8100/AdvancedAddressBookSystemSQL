@@ -3,4 +3,20 @@ SQL QUERY: create database AddressBook;
 OUTPUT:
 21:36:33	create database AddressBook	1 row(s) affected	0.438 sec
 
+#UC2: Ability to create a Address Book Table with first and last names, address, city, state, zip, phone number and email as its attributes
+SQL QUERY: use AddressBook;
 
+           create table addressbook(
+           first_name varchar(40) not null,
+           last_name varchar(40) not null,
+           address varchar(40),
+           city varchar(40),
+           state varchar(40),
+           zip int,
+           phone_number long,
+           email varchar(40)
+           );
+OUTPUT:
+22:11:08	use AddressBook	0 row(s) affected	0.000 sec
+
+22:11:14	create table addressbook( first_name varchar(40) not null, last_name varchar(40) not null, address varchar(40), city varchar(40), state varchar(40), zip int, phone_number long, email varchar(40) )	0 row(s) affected	0.250 sec
