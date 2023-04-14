@@ -20,3 +20,27 @@ OUTPUT:
 22:11:08	use AddressBook	0 row(s) affected	0.000 sec
 
 22:11:14	create table addressbook( first_name varchar(40) not null, last_name varchar(40) not null, address varchar(40), city varchar(40), state varchar(40), zip int, phone_number long, email varchar(40) )	0 row(s) affected	0.250 sec
+
+#UC3: Ability to insert new Contacts to Address Book
+SQL QUERY: insert into AddressBook(first_name,last_name,address,city,state,zip,phone_number,email) value
+           ("Namratha","Guptha","MG Road","Bengaluru","Karnataka",40001,784512589,"namratha@gmail.com")
+           ,("Manoj","Singh","Hill Road","Mumbai","Maharashtra",411034,7894561230,"manoj@gmail.com"),
+           ("Akash","Patil","Cottonpet","Hyderabad","Andhra Pradesh",411029,8928038762,"akash@gmail.com"),
+           ("Shreyas","Shetty","Indiranagar","Delhi","Delhi",411025,9421013180,"shreyas@gmail.com"),
+           ("Anusha","Rao","HSR Layout","Chennai","Tamil Nadu",41178,8844662578,"anusha@gmail.com");
+
+           select * from AddressBook;
+OUTPUT:
+22:21:52	insert into AddressBook(first_name,last_name,address,city,state,zip,phone_number,email) value ("Namratha","Guptha","MG Road","Bengaluru","Karnataka",40001,784512589,"namratha@gmail.com") ,("Manoj","Singh","Hill Road","Mumbai","Maharashtra",411034,7894561230,"manoj@gmail.com"), ("Akash","Patil","Cottonpet","Hyderabad","Andhra Pradesh",411029,8928038762,"akash@gmail.com"), ("Shreyas","Shetty","Indiranagar","Delhi","Delhi",411025,9421013180,"shreyas@gmail.com"), ("Anusha","Rao","HSR Layout","Chennai","Tamil Nadu",41178,8844662578,"anusha@gmail.com")	5 row(s) affected Records: 5  Duplicates: 0  Warnings: 0	0.250 sec
+
+first_name	|last_name	|address	  |city	       |state	       |zip	    |phone_number	|email
+Namratha	|Guptha	    |MG Road	  |Bengaluru   |Karnataka	   |40001	|784512589	    |namratha@gmail.com
+Manoj	    |Singh	    |Hill Road	  |Mumbai	   |Maharashtra	   |411034	|7894561230	    |manoj@gmail.com
+Akash	    |Patil	    |Cottonpet	  |Hyderabad   |Andhra Pradesh |411029	|8928038762	    |akash@gmail.com
+Shreyas	    |Shetty	    |Indiranagar  |Delhi	   |Delhi	       |411025	|9421013180	    |shreyas@gmail.com
+Anusha	    |Rao	    |HSR Layout	  |Chennai	   |Tamil Nadu	   |41178	|8844662578	    |anusha@gmail.com
+
+
+
+
+
