@@ -1,0 +1,6 @@
+#UC1: Ability to create a Address Book Service DB
+SQL QUERY: create database AddressBook;
+OUTPUT:
+21:36:33	create database AddressBook	1 row(s) affected	0.438 sec
+
+
