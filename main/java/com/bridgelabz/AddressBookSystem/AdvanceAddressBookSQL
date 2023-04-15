@@ -128,3 +128,20 @@ Manoj        |Singh	      |abc                 |Family   |Hill Road   |Mumbai   
 Akash        |Patil	      |xyz                 |Friends  |Cottonpet   |Hyderabad   |Andhra Pradesh |411029  |8928038762     |akash@gmail.com
 Anusha       |Rao	      |xyz                 |Friends  |HSR Layout  |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
 Shreyas      |Shetty	  |abc                 |Family   |MG Road     |Bengaluru   |Karnataka      |40001   |784512589      |shreyas@gmail.com
+
+
+#UC10: Ability to get number of contact persons i.e. count by type
+SQL QUERY: select count(type) from addressBook
+           where type = "Family";
+
+           select count(type) from addressBook
+           where type = "Friends";
+OUTPUT:
+10:27:39	select count(type) from addressBook where type = "Family" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+count(type)
+2
+
+10:29:21	select count(type) from addressBook where type = "Friends" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+count(type)
+3
+
