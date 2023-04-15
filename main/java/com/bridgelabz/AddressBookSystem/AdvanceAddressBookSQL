@@ -70,10 +70,20 @@ Manoj       |Singh      |Hill Road    |Mumbai      |Maharashtra    |411034	|3333
 Akash       |Patil      |Cottonpet    |Hyderabad   |Andhra Pradesh |411029  |8928038762     |akash@gmail.com
 Anusha      |Rao        |HSR Layout   |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
 
+
 #UC6: Ability to Retrieve Person belonging to a City or State from the Address Book
 SQL QUERY: select first_name, last_name, city, state from addressbook where city ="Bengaluru" and state ="Karnataka";
 OUTPUT:
 09:54:54	select first_name, last_name, city, state from addressbook where city ="Bengaluru" and state ="Karnataka" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
 first_name  |last_name  |city       |state
 Namratha    |Guptha     |Bengaluru  |Karnataka
+
+
+#UC7: Ability to understand the size of address book by City and State
+SQL QUERY: select count(city),count(state) from addressBook where city ="Chennai" and state="Tamil Nadu";
+OUTPUT:
+10:02:27	select count(city),count(state) from addressBook where city ="Chennai" and state="Tamil Nadu" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+count(city) |count(state)
+1           |1
+
 
