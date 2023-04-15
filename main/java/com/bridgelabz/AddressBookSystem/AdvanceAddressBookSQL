@@ -185,3 +185,8 @@ Akash        |xyz                 |Friends
 Akash        |abc                 |Family
 Anusha       |xyz                 |Friends
 Shreyas      |abc                 |Family
+
+
+#UC12: Draw the ER Diagram for Address Book Service DB
+OUTPUT: Refer AddressBookERDiagram.png
+
