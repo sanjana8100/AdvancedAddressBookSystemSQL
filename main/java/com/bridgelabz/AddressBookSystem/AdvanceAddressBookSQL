@@ -3,6 +3,7 @@ SQL QUERY: create database AddressBook;
 OUTPUT:
 21:36:33	create database AddressBook	1 row(s) affected	0.438 sec
 
+
 #UC2: Ability to create a Address Book Table with first and last names, address, city, state, zip, phone number and email as its attributes
 SQL QUERY: use AddressBook;
 
@@ -21,6 +22,7 @@ OUTPUT:
 
 22:11:14	create table addressbook( first_name varchar(40) not null, last_name varchar(40) not null, address varchar(40), city varchar(40), state varchar(40), zip int, phone_number long, email varchar(40) )	0 row(s) affected	0.250 sec
 
+
 #UC3: Ability to insert new Contacts to Address Book
 SQL QUERY: insert into AddressBook(first_name,last_name,address,city,state,zip,phone_number,email) value
            ("Namratha","Guptha","MG Road","Bengaluru","Karnataka",40001,784512589,"namratha@gmail.com")
@@ -33,14 +35,25 @@ SQL QUERY: insert into AddressBook(first_name,last_name,address,city,state,zip,p
 OUTPUT:
 22:21:52	insert into AddressBook(first_name,last_name,address,city,state,zip,phone_number,email) value ("Namratha","Guptha","MG Road","Bengaluru","Karnataka",40001,784512589,"namratha@gmail.com") ,("Manoj","Singh","Hill Road","Mumbai","Maharashtra",411034,7894561230,"manoj@gmail.com"), ("Akash","Patil","Cottonpet","Hyderabad","Andhra Pradesh",411029,8928038762,"akash@gmail.com"), ("Shreyas","Shetty","Indiranagar","Delhi","Delhi",411025,9421013180,"shreyas@gmail.com"), ("Anusha","Rao","HSR Layout","Chennai","Tamil Nadu",41178,8844662578,"anusha@gmail.com")	5 row(s) affected Records: 5  Duplicates: 0  Warnings: 0	0.250 sec
 
-first_name	|last_name	|address	  |city	       |state	       |zip	    |phone_number	|email
-Namratha	|Guptha	    |MG Road	  |Bengaluru   |Karnataka	   |40001	|784512589	    |namratha@gmail.com
-Manoj	    |Singh	    |Hill Road	  |Mumbai	   |Maharashtra	   |411034	|7894561230	    |manoj@gmail.com
-Akash	    |Patil	    |Cottonpet	  |Hyderabad   |Andhra Pradesh |411029	|8928038762	    |akash@gmail.com
-Shreyas	    |Shetty	    |Indiranagar  |Delhi	   |Delhi	       |411025	|9421013180	    |shreyas@gmail.com
-Anusha	    |Rao	    |HSR Layout	  |Chennai	   |Tamil Nadu	   |41178	|8844662578	    |anusha@gmail.com
+first_name  |last_name  |address      |city        |state          |zip     |phone_number   |email
+Namratha	|Guptha     |MG Road      |Bengaluru   |Karnataka      |40001   |784512589      |namratha@gmail.com
+Manoj       |Singh      |Hill Road    |Mumbai      |Maharashtra    |411034	|7894561230     |manoj@gmail.com
+Akash       |Patil      |Cottonpet    |Hyderabad   |Andhra Pradesh |411029  |8928038762     |akash@gmail.com
+Shreyas     |Shetty     |Indiranagar  |Delhi       |Delhi          |411025  |9421013180     |shreyas@gmail.com
+Anusha      |Rao        |HSR Layout   |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
 
 
+#UC4: Ability to edit existing contact person using their name
+SQL QUERY: update AddressBook set phone_number=333333333 where first_name ="Manoj";
+           select * from AddressBook;
+OUTPUT:
+09:01:35	update AddressBook set phone_number=333333333 where first_name ="Manoj"	1 row(s) affected Rows matched: 1  Changed: 1  Warnings: 0	0.406 sec
 
+first_name  |last_name  |address      |city        |state          |zip     |phone_number   |email
+Namratha	|Guptha     |MG Road      |Bengaluru   |Karnataka      |40001   |784512589      |namratha@gmail.com
+Manoj       |Singh      |Hill Road    |Mumbai      |Maharashtra    |411034	|333333333      |manoj@gmail.com
+Akash       |Patil      |Cottonpet    |Hyderabad   |Andhra Pradesh |411029  |8928038762     |akash@gmail.com
+Shreyas     |Shetty     |Indiranagar  |Delhi       |Delhi          |411025  |9421013180     |shreyas@gmail.com
+Anusha      |Rao        |HSR Layout   |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
 
 
