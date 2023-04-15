@@ -190,3 +190,46 @@ Shreyas      |abc                 |Family
 #UC12: Draw the ER Diagram for Address Book Service DB
 OUTPUT: Refer AddressBookERDiagram.png
 
+
+#UC13: Ensure all retrieve queries done especially in UC 6, UC 7, UC 8 and UC 10 are working with new table structure
+SQL QUERY: //UC6
+           select first_name, last_name, city, state from addressbook where city ="Bengaluru" and state ="Karnataka";
+
+           //UC7
+           select count(city),count(state) from addressBook where city ="Chennai" and state="Tamil Nadu";
+
+           //UC8
+           select first_name from addressBook where city ="Bengaluru" order by first_name asc;
+
+           //UC10
+           select count(type) from addressbooktype
+           where type = "Family";
+
+           select count(type) from addressbooktype
+           where type = "Friends";
+OUTPUT:
+       //UC6
+18:30:32	select first_name, last_name, city, state from addressbook where city ="Bengaluru" and state ="Karnataka" LIMIT 0, 1000	2 row(s) returned	0.110 sec / 0.000 sec
+first_name  |last_name   |city       |state
+Namratha    |Guptha      |Bengaluru  |Karnataka
+Shreyas     |Shetty      |Bengaluru  |Karnataka
+
+       //UC7
+18:32:50	select count(city),count(state) from addressBook where city ="Chennai" and state="Tamil Nadu" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+count(city)  |count(state)
+1            |1
+
+       //UC8
+18:34:21	select first_name from addressBook where city ="Bengaluru" order by first_name asc LIMIT 0, 1000	2 row(s) returned	0.047 sec / 0.000 sec
+first_name
+Namratha
+Shreyas
+
+       //UC10
+18:35:43	select count(type) from addressbooktype where type = "Family" LIMIT 0, 1000	1 row(s) returned	0.015 sec / 0.000 sec
+count(type)
+3
+
+18:36:27	select count(type) from addressbooktype where type = "Friends" LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+count(type)
+3
