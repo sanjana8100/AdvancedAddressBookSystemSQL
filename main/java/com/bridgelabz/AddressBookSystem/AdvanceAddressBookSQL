@@ -145,3 +145,43 @@ count(type)
 count(type)
 3
 
+
+#UC11: Ability to add person to both Friend and Family
+SQL QUERY: alter table addressbook
+           drop column address_book_name;
+
+           alter table addressbook
+           drop column type;
+
+           create table addressbooktype(
+           first_name varchar(40) not null,
+           address_book_name varchar(40),
+           type varchar(20)
+           );
+
+           insert into addressbooktype(first_name,address_book_name,type) value
+           ("Namratha","xyz","Friends"),
+           ("Manoj","abc","Family"),
+           ("Akash","xyz","Friends"),
+           ("Akash","abc","Family"),
+           ("Anusha","xyz","Friends"),
+           ("Shreyas","abc","Family");
+
+           select * from addressbooktype;
+OUTPUT:
+12:36:50	alter table addressbook drop column address_book_name	0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0	0.485 sec
+
+12:37:23	alter table addressbook drop column type	0 row(s) affected Records: 0  Duplicates: 0  Warnings: 0	0.094 sec
+
+12:37:32	create table addressbooktype( first_name varchar(40) not null, address_book_name varchar(40), type varchar(20) )	0 row(s) affected	0.672 sec
+
+12:43:04	insert into addressbooktype(first_name,address_book_name,type) value ("Namratha","xyz","Friends"), ("Manoj","abc","Family"), ("Akash","xyz","Friends"), ("Akash","abc","Family"), ("Anusha","xyz","Friends"), ("Shreyas","abc","Family")	6 row(s) affected Records: 6  Duplicates: 0  Warnings: 0	0.156 sec
+
+12:43:31	select * from addressbooktype LIMIT 0, 1000	6 row(s) returned	0.032 sec / 0.000 sec
+first_name   |address_book_name   |type
+Namratha     |xyz                 |Friends
+Manoj        |abc                 |Family
+Akash        |xyz                 |Friends
+Akash        |abc                 |Family
+Anusha       |xyz                 |Friends
+Shreyas      |abc                 |Family
