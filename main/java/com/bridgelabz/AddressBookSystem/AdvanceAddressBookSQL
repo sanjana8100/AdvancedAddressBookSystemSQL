@@ -57,3 +57,16 @@ Shreyas     |Shetty     |Indiranagar  |Delhi       |Delhi          |411025  |942
 Anusha      |Rao        |HSR Layout   |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
 
 
+#UC5: Ability to delete a person using person's name
+SQL QUERY: delete from addressBook where first_name ="Shreyas";
+           select * from AddressBook;
+OUTPUT:
+09:23:56	delete from addressBook where first_name ="Shreyas"	1 row(s) affected	0.125 sec
+
+09:28:09	select * from AddressBook LIMIT 0, 1000	4 row(s) returned	0.000 sec / 0.000 sec
+first_name  |last_name  |address      |city        |state          |zip     |phone_number   |email
+Namratha	|Guptha     |MG Road      |Bengaluru   |Karnataka      |40001   |784512589      |namratha@gmail.com
+Manoj       |Singh      |Hill Road    |Mumbai      |Maharashtra    |411034	|333333333      |manoj@gmail.com
+Akash       |Patil      |Cottonpet    |Hyderabad   |Andhra Pradesh |411029  |8928038762     |akash@gmail.com
+Anusha      |Rao        |HSR Layout   |Chennai     |Tamil Nadu     |41178   |8844662578     |anusha@gmail.com
+
